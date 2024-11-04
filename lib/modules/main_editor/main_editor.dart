@@ -2009,21 +2009,17 @@ class ProImageEditorState extends State<ProImageEditor>
             configs.layerInteraction.hideToolbarOnInteraction
         ? null
         : AppBar(
-            automaticallyImplyLeading: false,
             foregroundColor: imageEditorTheme.appBarForegroundColor,
             backgroundColor: imageEditorTheme.appBarBackgroundColor,
+            leading: IconButton(
+              tooltip: i18n.cancel,
+              icon: Icon(icons.closeEditor),
+              onPressed: closeEditor,
+            ),
             actions: [
-              IconButton(
-                tooltip: i18n.cancel,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                icon: Icon(icons.closeEditor),
-                onPressed: closeEditor,
-              ),
-              const Spacer(),
               IconButton(
                 key: const ValueKey('MainEditorUndoButton'),
                 tooltip: i18n.undo,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
                 icon: Icon(
                   icons.undoAction,
                   color: stateManager.position > 0
@@ -2035,7 +2031,6 @@ class ProImageEditorState extends State<ProImageEditor>
               IconButton(
                 key: const ValueKey('MainEditorRedoButton'),
                 tooltip: i18n.redo,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
                 icon: Icon(
                   icons.redoAction,
                   color: stateManager.position < stateHistory.length - 1
@@ -2046,7 +2041,7 @@ class ProImageEditorState extends State<ProImageEditor>
               ),
               !_initialized
                   ? Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 11.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
                       child: SizedBox.square(
                         dimension: 22,
                         child:
@@ -2056,7 +2051,6 @@ class ProImageEditorState extends State<ProImageEditor>
                   : IconButton(
                       key: const ValueKey('MainEditorDoneButton'),
                       tooltip: i18n.done,
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
                       icon: Icon(icons.doneIcon),
                       iconSize: 28,
                       onPressed: doneEditing,
