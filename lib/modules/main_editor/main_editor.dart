@@ -2041,9 +2041,9 @@ class ProImageEditorState extends State<ProImageEditor>
               ),
               !_initialized
                   ? Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: SizedBox.square(
-                        dimension: 22,
+                        dimension: 24,
                         child:
                             PlatformCircularProgressIndicator(configs: configs),
                       ),
