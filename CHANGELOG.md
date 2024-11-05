@@ -1,5 +1,10 @@
 # Changelog
 
+## 6.1.2
+- **STYLE(AppBar)**: moved close action to AppBar's leading parameter for improved layout consistency.
+- **STYLE(AppBar)**: updated IconButtons to use default 8-point all-around padding, enhancing visual balance.
+- **STYLE(AppBar)**: adjusted loading indicator padding to a multiple of 2 to align with design system standards.
+
 ## 6.1.1
 - **FIX**(CustomWidgets): resolve issue preventing user from using custom widget `removeLayerArea`.
 
